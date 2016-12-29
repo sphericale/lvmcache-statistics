@@ -80,11 +80,11 @@ CoreArgs=""
 
 if [ ${NrCoreArgs} -ne 0 ]; then
 
-  for ITEM in $(seq $((INDEX+1)) $((2*NrCoreArgs+INDEX)) ); do
+  for ITEM in $(seq $((INDEX+1)) $((NrCoreArgs+INDEX)) ); do
      CoreArgs="${CoreArgs}${RESULTS[${ITEM}]} "
   done
 
-  INDEX=$((INDEX+2*NrCoreArgs))
+  INDEX=$((INDEX+NrCoreArgs))
 fi
 
 INDEX=$((INDEX+1))
@@ -95,11 +95,11 @@ PolicyArgs=""
 
 if [ ${NrPolicyArgs} -ne 0 ]; then
 
-  for ITEM in $(seq $((INDEX+1)) $((2*NrPolicyArgs+INDEX)) ); do
+  for ITEM in $(seq $((INDEX+1)) $((NrPolicyArgs+INDEX)) ); do
      PolicyArgs="${PolicyArgs}${RESULTS[${ITEM}]} "
   done
 
-  INDEX=$((INDEX+2*NrPolicyArgs))
+  INDEX=$((INDEX+NrPolicyArgs))
 fi
 
 ##################################################################
